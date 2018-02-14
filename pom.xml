@@ -1029,7 +1029,6 @@ under the License.
 						<exclude>flink-formats/flink-avro/src/test/resources/avro/*.avsc</exclude>
 						<exclude>out/test/flink-avro/avro/user.avsc</exclude>
 						<exclude>flink-libraries/flink-table/src/test/scala/resources/*.out</exclude>
-						<exclude>flink-yarn/src/test/resources/krb5.keytab</exclude>
 						<exclude>test-infra/end-to-end-test/test-data/*</exclude>
 
 						<!-- snapshots -->
@@ -1201,6 +1200,12 @@ under the License.
 							</rules>
 						</configuration>
 					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<executions>
 					<execution>
 						<id>dependency-convergence</id>
 						<goals>
@@ -1298,7 +1303,7 @@ under the License.
 		<plugin>
                 <groupId>org.ekstazi</groupId>
                 <artifactId>ekstazi-maven-plugin</artifactId>
-                <version>5.0.1</version>
+                <version>4.6.3</version>
                 <executions>
                     <execution>
                         <id>ekstazi</id>
